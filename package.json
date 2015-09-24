@@ -1,0 +1,25 @@
+{
+  "name": "leagueoflegends",
+  "version": "1.0.0",
+  "description": "lol",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/vigorouslightning/leagueoflegends.git"
+  },
+  "keywords": [
+    "lol"
+  ],
+  "author": "Kyle Plunkett",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/vigorouslightning/leagueoflegends/issues"
+  },
+  "homepage": "https://github.com/vigorouslightning/leagueoflegends",
+  "dependencies": {
+    "express": "^4.13.3"
+  }
+}
