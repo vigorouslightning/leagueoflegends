@@ -1,6 +1,6 @@
 var app = angular.module("lolApp", ['ngRoute']);
             
-app.config(function($routeProvider) {
+app.config(function($routeProvider, $locationProvider) {
     $routeProvider
         .when('/', {
             templateUrl : 'home.html',
@@ -10,11 +10,9 @@ app.config(function($routeProvider) {
             templateUrl : 'champDetail.html',
             controller  : 'champController'
         })
-        .when('/home', {
-            templateUrl : 'home.html',
-            controller  : 'lolController'
-        })
         .otherwise({
             redirectTo: '/404'
         });
+        
+        $locationProvider.html5Mode(true);
 });

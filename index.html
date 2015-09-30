@@ -2,21 +2,31 @@
 <html ng-app="lolApp">
     <head>
         <title>League of Legends</title>
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+        <!--<link rel="stylesheet" href="/bootstrap/dist/css/bootstrap.min.css">-->
         <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.min.js"></script>
         <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular-route.js"></script>
         <script src="https://code.jquery.com/jquery-1.11.1.js"></script>
-        
+        <base href="/">
+        <style>
+            .left-nav {
+                position: fixed;
+                background-color: black;
+            }
+        </style>
         <script>
             jQuery(document).ready(function($) {
                 $('img').click(function() {
                     $(this).next('img').show();    
                 }); 
+                
+                $('.left-nav').css("height", $(window).height());
             });
         </script>
     </head>
     <body>
-        <div class="col-md-2 hidden-sm hidden-xs" style="background-color: black;">Yo</div>
+        <div class="col-md-2 hidden-sm hidden-xs">
+            <div class="left-nav"></div>
+        </div>
         <div class="col-md-8 text-centered" ng-view>
             
         </div>

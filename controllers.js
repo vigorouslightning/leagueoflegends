@@ -15,6 +15,7 @@ app.controller("champController", function($scope, $http, $routeParams, $sce) {
     $scope.splashURL = 'http://ddragon.leagueoflegends.com/cdn/img/champion/splash/';
     $scope.spellURL = 'http://ddragon.leagueoflegends.com/cdn/5.18.1/img/spell/';
     $scope.trust = $sce.trustAsHtml;
+    $scope.e3 = "TEST";
     
     $http.get('https://global.api.pvp.net/api/lol/static-data/na/v1.2/champion/' + $scope.champID + '?champData=all&api_key=b322dc6d-0fcf-4484-9fc3-a9a902a32274').success(function(response){
 	    $scope.champInfo = response;
