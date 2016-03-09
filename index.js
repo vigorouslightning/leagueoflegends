@@ -5,8 +5,8 @@ var app = express();
 
 app.use(express.static(path.resolve('./')));
 
-app.get('/', function(req, res) {
-    res.sendFile('index.html'); 
+app.get('*', function(req, res) {
+    res.sendFile('index.html', {root: path.join(__dirname, 'client', 'views') }); 
 });
 
 var port = process.env.PORT || 8000;
