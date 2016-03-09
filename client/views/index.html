@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html ng-app="lolApp">
+    <head>
+        <title>League of Legends</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="/bootstrap/dist/css/bootstrap.css">
+        <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Ubuntu">
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular-route.js"></script>
+        <script src="https://code.jquery.com/jquery-1.11.1.js"></script>
+        <base href="/">
+        <style>
+            body {
+                background: white;
+                /*background: linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.45)), url('http://7-themes.com/data_images/out/26/6857141-league-of-legends-wallpaper.jpg') no-repeat center center fixed;*/
+                -webkit-background-size: cover;
+                -moz-background-size: cover;
+                -o-background-size: cover;
+                background-size: cover;
+                font-family: Ubuntu;
+                font-size: 1.2em;
+            }
+            
+            .jumbotron {
+                background: rgba(0,0,0,0.8);
+            }
+            
+            .navbar-inverse {
+                background: rgba(0,0,0,0.8);
+            }
+        
+            .left-nav-wrapper {
+                background-color: black;  
+            }
+            
+            .left-nav {
+                position: fixed;
+            }
+            
+            .no-padding {
+                padding-left: 0;
+                padding-right: 0;
+            }
+            
+            .img-full-width {
+                width: 100%;
+            }
+        </style>
+        <script>
+            jQuery(document).ready(function($) {
+                $('img').click(function() {
+                    $(this).next('img').show();    
+                }); 
+                
+                $('.left-nav-wrapper').css("height", $(window).height());
+                $('.left-nav').css("height", $('.left-nav-wrapper').height());
+            });
+        </script>
+    </head>
+    <body>
+        <nav class="navbar navbar-inverse">
+            <div class="container">
+                <img class="img-responsive" style="max-height: 50px" alt="League of Legends logo" src="http://vignette1.wikia.nocookie.net/leagueoflegends/images/8/86/League_of_legends_logo_transparent.png">
+            </div>
+        </nav>
+        <div class="container">
+            <div class="jumbotron">
+                
+            </div>
+        </div>
+        <div class="container">
+            <nav class="navbar navbar-inverse">
+                <ul class="nav navbar-nav">
+                    <li class="active"><a href="/">Champions</a></li>
+                    <li><a href="#">Test2</a></li>
+                    <li><a href="#">Test3</a></li>
+                    <li><a href="#">Test4</a></li>
+                    <li><a href="#">Test5</a></li>
+                </ul>
+                <div class="navbar-form pull-right" role="search">
+                    <div class="form-group">
+                        <div class="input-group">
+                            <input type="text" class="form-control" placeholder="Search" ng-model="searchText">
+                            <span class="input-group-btn">
+                                <a class="btn btn-danger" href="/summoner/{{searchText}}">Search</a>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+        </div>
+        
+        <!-- This is where the magic happens -->
+        <div class="container" ng-view></div>
+            
+        <script src="client/js/app.js"></script>
+        <script src="client/js/controllers.js"></script>
+    </body>
+</html>
