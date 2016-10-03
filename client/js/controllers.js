@@ -1,5 +1,6 @@
 app.controller("lolController", ['$scope', '$http', 'dataCache',function($scope, $http, dataCache) {
     $scope.datadragonURL = '';
+    $scope.splashURL = 'http://ddragon.leagueoflegends.com/cdn/img/champion/splash/';
     
     var cache = dataCache.get('data');
     
@@ -30,7 +31,10 @@ app.controller("summonerController", ['$scope', '$http', '$routeParams', functio
     });
 }]);
 
-app.controller("champController", ['$scope', '$http', '$routeParams', '$sce', function($scope, $http, $routeParams, $sce) {
+app.controller("champController", ['$scope', '$http', '$routeParams', '$sce', '$location', '$window', function($scope, $http, $routeParams, $sce, $location, $window) {
+    $scope.$on('$viewContentLoaded', function(event) {
+        $window.ga('send', 'pageview', { page: $location.url() });
+    });
     $scope.champID = $routeParams.champID;
     $scope.splashURL = 'http://ddragon.leagueoflegends.com/cdn/img/champion/splash/';
     $scope.spellURL = 'http://ddragon.leagueoflegends.com/cdn/5.18.1/img/spell/';

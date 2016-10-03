@@ -1,14 +1,19 @@
-<div class="container">
-    <img style="width: 100%;" class="img-responsive" ng-src="{{splashURL + champInfo.name + '_0.jpg'}}" />
+<section class="bg-hero" style="background: url({{splashURL + champInfo.name + '_0.jpg'}}) no-repeat center center;
+            background-size: cover;
+            -webkit-background-size: cover;
+            -moz-background-size: cover; 
+            -o-background-size: cover;">
+</section>
+<section class="container">
     <div class="row">
-        <div class="col-md-60">
+        <div class="col-md-12">
             <a href="/">Go Back</a>
             <h3>{{champInfo.name}}</h3>
             <h4>{{champInfo.title}}</h4>
         </div>
     </div>
     <div class="row">
-        <div class="col-sm-15" ng-repeat="spell in champInfo.spells">
+        <div class="col-sm-3" ng-repeat="spell in champInfo.spells">
             <div class="panel panel-default">
                 <div class="panel-body">
                     <img class="img-responsive pull-left" ng-src="{{spellURL + spell.image.full}}" /> Name: {{spell.name}}
@@ -20,9 +25,9 @@
             </div>
         </div>
     </div>
-</div>
+</section>
 <div class="row">
-    <div class="col-md-30 col-lg-20 text-center" ng-repeat="skin in champInfo.skins" ng-if="skin.name != 'default'">
+    <div class="kyle-col text-center" ng-repeat="skin in champInfo.skins" ng-if="skin.name != 'default'">
         <h4>{{skin.name}}</h4>
         <img class="img-responsive" ng-src="{{splashURL + champInfo.name + '_' + skin.num + '.jpg'}}" />
     </div>

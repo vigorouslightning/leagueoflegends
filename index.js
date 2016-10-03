@@ -9,6 +9,8 @@ app.get('*', function(req, res) {
     res.sendFile('index.html', {root: path.join(__dirname, 'client', 'views') }); 
 });
 
+app.get('')
+
 var port = process.env.PORT || 8000;
 
 app.listen(port, function(){
